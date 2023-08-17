@@ -15,7 +15,7 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     debugPrint('build is called');
-    print('build');
+
     final countProvider = Provider.of<CounterProvider>(context, listen: false);
 
     return Scaffold(
@@ -38,7 +38,7 @@ class _CounterScreenState extends State<CounterScreen> {
         children: [
           Center(child:
               Consumer<CounterProvider>(builder: (context, value, child) {
-            print('only text widget is build');
+            debugPrint('only text widget is build');
             return Text(
               value.counter.toString(),
               style: const TextStyle(fontSize: 30),

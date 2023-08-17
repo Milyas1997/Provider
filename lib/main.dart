@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provintro/provider/slider_provider.dart';
+import 'package:provintro/screen/exampletwo_screen.dart';
 import 'provider/counter_provider.dart';
 import 'screen/counter_screen.dart';
 
@@ -13,10 +15,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => CounterProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => CounterProvider(),
+        ),
+        ChangeNotifierProvider(create: (_) => SliderProvider()),
+      ],
       child: const MaterialApp(
-        home: CounterScreen(),
+        home: SliderScreen(),
       ),
     );
   }
