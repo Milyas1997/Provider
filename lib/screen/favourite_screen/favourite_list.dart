@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provintro/provider/favourite_provider.dart';
 
-class ListTileScreeen extends StatefulWidget {
-  const ListTileScreeen({super.key});
+class FavouriteListScreen extends StatefulWidget {
+  const FavouriteListScreen({super.key});
 
   @override
-  State<ListTileScreeen> createState() => _ListTileScreeenState();
+  State<FavouriteListScreen> createState() => _FavouriteListScreenState();
 }
 
-class _ListTileScreeenState extends State<ListTileScreeen> {
+class _FavouriteListScreenState extends State<FavouriteListScreen> {
   @override
   Widget build(BuildContext context) {
-    final favourite = Provider.of<FavourateProvder>(context);
+    final favProvider = Provider.of<FavourateProvder>(context);
 
     return Scaffold(
       body: SafeArea(
         child: ListView.builder(
-            itemCount: 100,
+            itemCount: favProvider.indexListItem.length,
             itemBuilder: (contex, index) {
               return Consumer<FavourateProvder>(
                   builder: (context, value, child) {
