@@ -22,6 +22,7 @@ class _CounterScreenState extends State<CounterScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
         onPressed: () {
+          // countProvider.increment();
           Timer.periodic(const Duration(seconds: 1), (timer) {
             countProvider.increment();
           });
